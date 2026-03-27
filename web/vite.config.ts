@@ -7,4 +7,7 @@ export default defineConfig({
   build: {
     assetsInlineLimit: 10240,
   },
+  preview: {
+    allowedHosts: ['live.ssmllameziaterme.it'],
+  },
 })
