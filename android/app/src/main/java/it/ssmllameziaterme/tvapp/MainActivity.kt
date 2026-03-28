@@ -17,7 +17,7 @@ class MainActivity : Activity() {
     private lateinit var webView: WebView
 
     companion object {
-        private const val REMOTE_URL = "https://tv.ssmllameziaterme.it"
+        private const val REMOTE_URL = "https://live.ssmllameziaterme.it"
         private const val LOCAL_URL = "file:///android_asset/index.html"
     }
 
@@ -43,6 +43,8 @@ class MainActivity : Activity() {
             settings.mediaPlaybackRequiresUserGesture = false
             settings.loadWithOverviewMode = true
             settings.useWideViewPort = true
+            settings.setSupportZoom(false)
+            settings.builtInZoomControls = false
             settings.allowFileAccess = true
             settings.allowContentAccess = true
 
