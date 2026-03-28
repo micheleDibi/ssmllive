@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { useSlideshow } from './hooks/useSlideshow'
 import { useWakeLock } from './hooks/useWakeLock'
@@ -19,6 +20,7 @@ import { EventsSlide } from './components/slides/EventsSlide'
 import { ExamsSlide } from './components/slides/ExamsSlide'
 import { ContactSlide } from './components/slides/ContactSlide'
 import { VerticalApp } from './components/vertical/VerticalApp'
+import { SettingsPage } from './pages/SettingsPage'
 
 function getSlideContent(slideId: string) {
   switch (slideId) {
@@ -59,7 +61,16 @@ function LandscapeApp() {
   )
 }
 
-export default function App() {
+function Slideshow() {
   const isPortrait = useOrientation()
   return isPortrait ? <VerticalApp /> : <LandscapeApp />
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Slideshow />} />
+      <Route path="/settings" element={<SettingsPage />} />
+    </Routes>
+  )
 }
