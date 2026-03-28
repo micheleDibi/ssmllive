@@ -43,8 +43,9 @@ class MainActivity : Activity() {
             settings.mediaPlaybackRequiresUserGesture = false
             settings.loadWithOverviewMode = true
             settings.useWideViewPort = true
-            settings.setSupportZoom(false)
+            settings.setSupportZoom(true)
             settings.builtInZoomControls = false
+            setInitialScale(1)
             settings.allowFileAccess = true
             settings.allowContentAccess = true
 
